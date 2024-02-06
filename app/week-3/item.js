@@ -1,9 +1,8 @@
 export default function Item({ name, quantity, category }) {
     return (
-        <ul>
-            <li>{name}</li>
-            <li>{quantity}</li>
-            <li>{category}</li>
-        </ul>
+        <>
+            <p className="font-bold text-xl">{name}</p>
+            <p>Buy {quantity} in {category}</p>
+        </>
     );
 };

@@ -8,6 +8,7 @@ export default function Home() {
       <div className="grid justify-center gap-2 my-2">
         <Link href="./week-2" className="underline">Week 2</Link>
         <Link href="./week-3" className="underline">Week 3</Link>
+        <Link href="./week-4" className="underline">Week 4</Link>
       </div>
     </div>
   );

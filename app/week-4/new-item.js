@@ -24,27 +24,23 @@ export default function NewItem() {
 
     const submitHandler = event => {
         event.preventDefault();
-        console.log({ itemName, itemQuantity, selectedValue });
+        console.log({ name: itemName, quantity: itemQuantity, category: selectedValue });
+        alert(`Added item: ${itemName} quantity: ${itemQuantity} category: ${selectedValue}`);
         changeItemName("");
         changeItemQuantity(1);
         changeSelectedValue("Produce");
     }
 
     return (
-
-        <div>
-            <p>{itemName}</p>
-            <p>{itemQuantity}</p>
-            <p>{selectedValue}</p>
-            <form className="text-black" onSubmit={submitHandler}>
-                <input type="text" name="item-name" placeholder="Item Name" value={itemName} onChange={nameChangeHandler} />
-                <input type="number" name="item-quantity" min={1} value={itemQuantity} onChange={quantityChangeHandler} />
-                <select onChange={selectInputHandler} value={selectedValue}>
+        <form className="text-black max-w-96 mx-auto p-6 bg-slate-900 grid gap-y-4 rounded-lg w-11/12" onSubmit={submitHandler}>
+            <input type="text" name="item-name" placeholder="Item Name" required value={itemName} onChange={nameChangeHandler} className="p-2 rounded-lg" />
+            <div className="flex justify-between">
+                <input type="number" name="item-quantity" min={1} value={itemQuantity} onChange={quantityChangeHandler} className="w-14 p-2 rounded-lg" />
+                <select onChange={selectInputHandler} value={selectedValue} className="p-2 rounded-lg">
                     {options.map((optionLabel, index) => <option key={index} label={optionLabel} value={optionLabel}></option>)}
                 </select>
-                <button className="text-white">Add</button>
-            </form>
-
-        </div>
+            </div>
+            <button className="text-white bg-violet-950 rounded-lg p-2">Add</button>
+        </form>
     );
 }

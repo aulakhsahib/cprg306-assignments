@@ -82,9 +82,4 @@ export default function Page() {
         groupByData[item.category].push(item);
         return groupByData;
     }, {})
-
-    for (key in group) {
-        console.log(key);
-        console.log(group[key]);
-    }
 }

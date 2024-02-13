@@ -15,7 +15,7 @@ export default function NewItem() {
     }
 
     const quantityChangeHandler = event => {
-        changeItemQuantity(event.target.value);
+        changeItemQuantity(parseInt(event.target.value));
     }
 
     const selectInputHandler = event => {

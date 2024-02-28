@@ -42,8 +42,8 @@ export default function ItemList({ items, sortBy }) {
             Object.keys(listToRender).map((category, index) => {
                 return (
                     <section key={index}>
-                        <h2>{category}</h2>
-                        <ul className="grid gap-y-4 w-11/12 my-6 mx-auto">
+                        <h2 className="capitalize font-bold">{category}</h2>
+                        <ul className="grid gap-y-4 w-11/12 my-6">
                             {listToRender[category].map((data, index) => {
                                 return (
                                     <li className="bg-blue-900 rounded-lg p-4 w-6/12 max-w-xs" key={index}>
@@ -56,7 +56,7 @@ export default function ItemList({ items, sortBy }) {
                 );
             })
             :
-            < ul className="grid gap-y-4 w-11/12 my-6 mx-auto" >
+            < ul className="grid gap-y-4 w-11/12 my-6" >
                 {
                     listToRender.map((data, index) => {
                         return (
@@ -69,26 +69,3 @@ export default function ItemList({ items, sortBy }) {
             </ul >
     );
 };
-
-
-// const group = items.reduce((groupByData, item) => {
-//     (!(item.category in groupByData)) && (groupByData[item.category] = []);
-//     groupByData[item.category].push(item);
-//     return groupByData;
-// }, {})
-// listToRender = Object.keys(groupedList).map((category, index) => {
-//     return (
-//         <section key={index}>
-//             <h2>{category}</h2>
-//             <ul className="grid gap-y-4 w-11/12 my-6 mx-auto">
-//                 {groupedList[category].map((data, index) => {
-//                     return (
-//                         <li className="bg-blue-900 rounded-lg p-4 w-6/12 max-w-xs" key={index}>
-//                             <Item {...data} />
-//                         </li>
-//                     );
-//                 })}
-//             </ul>
-//         </section>
-//     );
-// });

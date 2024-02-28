@@ -8,61 +8,64 @@ export default function Page() {
   const items = itemsData;
 
   const [sortBy, setSortBy] = useState("name");
-  
+
   const handleChange = (event) => {
     setSortBy(event.target.value);
   };
 
   return (
     <>
-      <header>
-        <h1>Shopping List</h1>
-        <nav className="">
-          <form>
-            <label>
-              Name
-              <input
-                id="name"
-                type="radio"
-                onChange={handleChange}
-                checked={sortBy === "name"}
-                value="name"
-                name="Select Sort By Option"
-                className=""
-              />
-            </label>
+      <div className="w-11/12 mx-auto mt-6">
+        <header>
+          <h1 className="font-bold text-2xl">Shopping List</h1>
+          <nav className="flex gap-x-4 items-center my-8">
+            <span>Sort By :</span>
+            <form className="flex gap-x-4 items-center">
+              <label className="has-[:checked]:bg-orange-800 bg-orange-600 p-2 rounded">
+                Name
+                <input
+                  id="name"
+                  type="radio"
+                  onChange={handleChange}
+                  checked={sortBy === "name"}
+                  value="name"
+                  name="Select Sort By Option"
+                  className="fixed -left-full -top-full invisible"
+                />
+              </label>
 
-            <label>
-              Category
-              <input
-                id="radio"
-                type="radio"
-                onChange={handleChange}
-                checked={sortBy === "category"}
-                value="category"
-                name="Select Sort By Option"
-                className=""
-              />
-            </label>
+              <label className="has-[:checked]:bg-orange-800 bg-orange-600 p-2 rounded">
+                Category
+                <input
+                  id="radio"
+                  type="radio"
+                  onChange={handleChange}
+                  checked={sortBy === "category"}
+                  value="category"
+                  name="Select Sort By Option"
+                  className="fixed -left-full -top-full invisible"
+                />
+              </label>
 
-            <label>
-              Grouped Category
-              <input
-                id="radio"
-                type="radio"
-                onChange={handleChange}
-                checked={sortBy === "groupedCategory"}
-                value="groupedCategory"
-                name="Select Sort By Option"
-                className=""
-              />
-            </label>
-          </form>
-        </nav>
-      </header>
-      <main>
-        <ItemList items={items} sortBy={sortBy} />
-      </main>
+              <label className="has-[:checked]:bg-orange-800 bg-orange-600 p-2 rounded">
+                Grouped Category
+                <input
+                  id="radio"
+                  type="radio"
+                  onChange={handleChange}
+                  checked={sortBy === "groupedCategory"}
+                  value="groupedCategory"
+                  name="Select Sort By Option"
+                  className="fixed -left-full -top-full invisible"
+                />
+              </label>
+            </form>
+          </nav>
+        </header>
+        <main>
+          <ItemList items={items} sortBy={sortBy} />
+        </main>
+      </div>
     </>
   );
 }

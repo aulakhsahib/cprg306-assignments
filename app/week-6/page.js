@@ -16,9 +16,9 @@ export default function Page() {
 
     return (
         <>
-            <NewItem setItems={setItems} />
             <div className="w-11/12 mx-auto mt-6">
-                <header>
+                <NewItem setItems={setItems} />
+                <header className="mt-6">
                     <h1 className="font-bold text-2xl">Shopping List</h1>
                     <nav className="flex gap-x-4 items-center my-8">
                         <span>Sort By :</span>

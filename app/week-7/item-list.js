@@ -65,7 +65,7 @@ export default function ItemList({ items, sortBy, setMainIngredient }) {
                 return (
                     <section key={index}>
                         <h2 className="capitalize font-bold">{category}</h2>
-                        <ul className="grid gap-y-4 w-11/12 my-6">
+                        <ul className="grid gap-y-4 w-11/12">
                             {listToRender[category].map((data, index) => {
                                 return (
                                     <li className="bg-blue-900 rounded-lg p-4 w-6/12 max-w-xs cursor-pointer hover:bg-blue-600" key={index} onClick={() => mainIngredientSetter(data.name)}>
@@ -78,7 +78,7 @@ export default function ItemList({ items, sortBy, setMainIngredient }) {
                 );
             })
             :
-            < ul className="grid gap-y-4 w-11/12 my-6" >
+            < ul className="grid gap-y-4 w-11/12" >
                 {
                     listToRender.map((data, index) => {
                         return (

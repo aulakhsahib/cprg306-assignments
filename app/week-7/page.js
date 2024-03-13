@@ -69,7 +69,7 @@ export default function Page() {
                 </header>
                 <main>
                     <ItemList items={items} sortBy={sortBy} setMainIngredient={setMainIngredient} />
-                    <MealIdeas mainIngredient={mainIngredient} />
+                    {mainIngredient && <MealIdeas mainIngredient={mainIngredient} />}
                 </main>
             </div>
         </>
